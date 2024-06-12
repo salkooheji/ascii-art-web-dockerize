@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ascii_Art Web</title>
+    <link rel="stylesheet" type="text/css" href="/static/style.css">
+</head>
+
+<body>
+    <div class="container">
+        
+            <header>
+                <div class="input">
+                    <h1>Ascii Art Web</h1>
+                    <form method="post" action="/ascii-art">
+                        <textarea name="text"   placeholder="Enter Text to Process" maxlength="500"></textarea><br>
+                        <input type="radio" name="font" value="standard.txt" checked> Standard
+                        <input type="radio" name="font" value="shadow.txt"> Shadow
+                        <input type="radio" name="font" value="thinkertoy.txt"> Thinkertoy <br> <br>
+                        <button type="submit" name="subbtn">Draw</button>
+                    </form>
+                </div>
+            </header>
+            <div class="output">
+                
+               <!-- <pre >{{.}}</pre>  -->
+
+               {{if .}}
+               <pre>{{.}}</pre>
+               <form action="/export" method="post">
+                 
+                   <input type="hidden" name="ascii" value="{{.}}" />
+                  <div class="image"> <button type="submit"><img src="static/download.png" alt="g"></button></div>
+                  
+ </form>
+               {{ end }}
+
+
+            </div>
+            
+        
+    </div>
+</body>
+
+</html>
+
+
