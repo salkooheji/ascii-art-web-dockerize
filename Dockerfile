@@ -20,7 +20,7 @@ RUN go build -o main .
 EXPOSE 8080
 
 # Set metadata for the container
-# LABEL maintainer="Fatema Naser <fatemanas2025@gmail.com>"
+ LABEL maintainer="Salman Alkooheji <s.alkooheji76@gmail.com>"
 
 # Command to run the executable
 CMD ["./main"]
