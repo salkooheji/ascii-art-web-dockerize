@@ -1,40 +1,61 @@
+# ASCII Art Web Application Dockerize
 
-## 🧐 About <a name="about"></a>
+## About
 
-This project aims to dockerize the Ascii-Art-WEB application, which allows users to generate ASCII art banners using different styles. By following the instructions below, you will learn how to containerize the application using Docker while adhering to good coding practices and Dockerfile best practices.
+This project aims to dockerize the ASCII Art Web application, enabling users to generate ASCII art banners using different styles. The Dockerfile provided in this repository facilitates the containerization process.
 
-### Objectives
+## Usage
 
-The objectives for this project are as follows:
-- Create at least one Dockerfile.
-- Build an image based on the Dockerfile.
-- Run a container using the image.
+### Building the Docker Image
+To build the Docker image, use the following command:
+```bash
+docker image build -f Dockerfile -t ascii-art-web .
+```
 
-### Usage
-`docker image build -f Dockerfile -t docker-app .`
+### Running the Docker Container
+After building the image, run the Docker container with:
+```bash
+docker container run -p 8080:8080 --detach --name ascii-art-web-container ascii-art-web
+```
 
-`docker container run -p 8080 --detach --name docker-app-container docker-app`
+Access the application by visiting [http://localhost:8080](http://localhost:8080).
 
+### Additional Commands
+- **Listing Docker Images:**
+  To list all available Docker images, run:
 
+  ```bash
+  docker images
+  ```
 
-Additional Docker Commands:
+- **Listing Running Containers:**
+  To list all running Docker containers, execute:
+  
+  ```bash
+  docker ps
+  ```
 
-Here are some additional Docker commands that might be useful:
+- **Entering the Docker Container:**
+  If you need to enter the running Docker container, use:
+  ```bash
+  docker exec -it ascii-art-web-container /bin/bash
+  ```
 
-- Check the status of running containers:
-`docker ps -a`
+### Cleaning Up
+To stop and remove the running container, as well as remove the Docker image, use the provided `clear.sh` script:
+```bash
+./clear.sh
+```
 
-- View the list of Docker images:
-`docker images`
+## Project Structure
 
-Accessing the Application
+- **Dockerfile:** Contains instructions to build the Docker image.
+- **test.sh:** Script to build the Docker image, run the container, and provide additional information.
+- **clear.sh:** Script to stop and remove the running container, as well as remove the Docker image.
 
-Once the Docker container is running, you can access the ascii-art-web-dockerize application by http://localhost:8080.
+## Authors
 
-## ✍️ Authors <a name="authors"></a>
-
-- [aliabbas0]
-- [hnooh]
-- [sayyusuf]
-
-
+- [hamonia]
+- [salkoohe]
+```
+This README.md file structure provides an overview of the project, instructions for usage, details on project structure, and information about the authors.
